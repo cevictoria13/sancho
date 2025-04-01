@@ -23,6 +23,8 @@ const FormContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+   
+
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -34,9 +36,23 @@ const FormContact = () => {
         }),
       });
 
-      const data = await response.json();
+      const result = await response.json();
+      console.log(result);
+    //  const data = await response.json();
 
-      if (response.ok) {
+    if (!response.ok) {
+      throw new Error(result.error || "Error al enviar el correo");
+  }
+
+  alert("Correo enviado correctamente");
+
+} catch (error) {
+  console.error("Error:", error);
+  alert(error.message);
+}
+};
+
+    /*  if (response.ok) {
         alert("Mensaje enviado con éxito");
         setFormData({ nombre: "", email: "", mensaje: "" });
       } else {
@@ -46,7 +62,7 @@ const FormContact = () => {
       alert("Error al enviar el mensaje. Inténtalo de nuevo.");
       console.error("Error en la solicitud:", error);
     }
-  };
+  };*/
 
   return (
     

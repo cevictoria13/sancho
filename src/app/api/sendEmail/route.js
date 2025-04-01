@@ -1,22 +1,20 @@
 import nodemailer from "nodemailer";
 
-export async function POST(req) {
+export async function POST(request) {
     try {
-    const { name, email, message } = await req.json();
-    console.log("Datos recibidos:", name, email, message);
+        const { name, email, message } = await request.json();
 
-    if (!name || !email || !message) {
-        return new Response(JSON.stringify({ error: "Todos los campos son obligatorios." }), {
-            status: 400,
-            headers: { "Content-Type": "application/json" },
-        });
-    }
+        if (!name || !email || !message) {
+            return new Response(JSON.stringify({ error: "Todos los campos son obligatorios." }), {
+                status: 400,
+                headers: { "Content-Type": "application/json" },
+            });
+        }
 
-   
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST, 
-            port: process.env.SMTP_PORT, 
-            secure: true, //solo funciona con el puerto 465
+            host: "mail.sanchorecabarren.cl",
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
@@ -24,7 +22,7 @@ export async function POST(req) {
         });
 
         const mailOptions = {
-            from: `"${name}" <${email}>`, // Nombre y correo del remitente
+            from: `"${name}" <${email}>`,
             replyTo: email,
             to: "escritor@sanchorecabarren.cl",
             subject: "Nuevo mensaje desde el formulario de contacto",
@@ -32,7 +30,7 @@ export async function POST(req) {
         };
 
         await transporter.sendMail(mailOptions);
-            
+
         return new Response(JSON.stringify({ success: "Correo enviado correctamente." }), {
             status: 200,
             headers: { "Content-Type": "application/json" },
@@ -40,14 +38,9 @@ export async function POST(req) {
 
     } catch (error) {
         console.error("Error al enviar el correo:", error);
-
         return new Response(JSON.stringify({ error: "Error al enviar el correo." }), {
             status: 500,
             headers: { "Content-Type": "application/json" },
         });
     }
 }
-
-//Si usas el App Router de Next.js, los archivos en /api deben estar 
-// dentro de app/api/sendEmail/route.js y
-//  la función POST debe recibir request en lugar de req:

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Image from 'next/image';
-import doctorfondo from '/public/doctorfondo.png'
+import doctorfondo from '../../../public/doctorfondo.png'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeIn } from "../components/utils/motionTransitions"
