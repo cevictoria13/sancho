@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-
+//import SMTPTransport from "nodemailer/lib/smtp-transport";
 export async function POST(request) {
     try {
         const { name, email, message } = await request.json();
@@ -19,10 +19,24 @@ export async function POST(request) {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
             },
+            debug: true, // Activa el modo de depuración
+            logger: true, // Registra los eventos en la consola
         });
 
+        // Verificar conexión con el servidor SMTP de manera asincrónica
+        try {
+            await transporter.verify();
+            console.log("✅ El servidor SMTP está listo para enviar correos.");
+        } catch (error) {
+            console.error("❌ Error en SMTP:", error);
+            return new Response(JSON.stringify({ error: "Error en la conexión SMTP." }), {
+                status: 500,
+                headers: { "Content-Type": "application/json" },
+            });
+        }
+
         const mailOptions = {
-            from: `"${name}" <${email}>`,
+            from: `Formulario de Contacto <${process.env.EMAIL_USER}>`, // Usa el mismo email configurado en SMTP,
             replyTo: email,
             to: "escritor@sanchorecabarren.cl",
             subject: "Nuevo mensaje desde el formulario de contacto",

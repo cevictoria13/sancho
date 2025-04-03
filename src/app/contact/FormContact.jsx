@@ -23,10 +23,14 @@ const FormContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
+     // Validación de campos
+  if (!formData.nombre || !formData.email || !formData.mensaje) {
+    alert("Todos los campos son obligatorios.");
+    return;
+  }
 
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -52,17 +56,7 @@ const FormContact = () => {
 }
 };
 
-    /*  if (response.ok) {
-        alert("Mensaje enviado con éxito");
-        setFormData({ nombre: "", email: "", mensaje: "" });
-      } else {
-        alert(`Error: ${data.error}`);
-      }
-    } catch (error) {
-      alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-      console.error("Error en la solicitud:", error);
-    }
-  };*/
+ 
 
   return (
     
