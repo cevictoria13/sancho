@@ -35,7 +35,7 @@ const Loco = () => {
     ];
 
     return (
-        <main className="min-h-screen p-6 pt-20 pb-16 flex  flex-col gap-6 bg-orange-600" > 
+        <main className="min-h-screen p-6 pt-20 pb-16 flex  flex-col gap-6 bg-zinc-800" > 
          <div className="relative text-center p-6 rounded-xl">     
                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  font-medium item-center text-center text-orange-200  -mt-4 pt-5"
                       style={{ fontFamily: "Averia Sans Libre" }}>y algo de Loco</h1><br/>
@@ -55,7 +55,7 @@ const Loco = () => {
                  style={{ fontFamily: "Averia Sans Libre" }} >Títulos Relacionados</h1>
            </div> 
   {/* Listado de obras */} 
-             <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6">
+             <div className="grid grid-cols-1 mb-16 sm:grid-cols-2 lg:grid-cols-3 gap-6">
              {works.map((work, index) => (
                <Card key={index} className='bg-orange-200 '>
                      

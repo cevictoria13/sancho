@@ -25,7 +25,7 @@ const FormContact = () => {
 
      // Validación de campos
   if (!formData.nombre || !formData.email || !formData.mensaje) {
-    alert("Todos los campos son obligatorios.");
+    alert("Por favor, completa todos los campos.");
     return;
   }
 
@@ -49,6 +49,8 @@ const FormContact = () => {
   }
 
   alert("Correo enviado correctamente");
+    // Opcional: limpiar formulario después del envío exitoso
+    /*setFormData({ nombre: "", email: "", mensaje: "" });*/
 
 } catch (error) {
   console.error("Error:", error);
