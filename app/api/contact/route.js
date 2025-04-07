@@ -2,8 +2,11 @@ import nodemailer from "nodemailer";
 
 //  handler para método POST
 export async function POST(request) {
+    console.log("✅ POST recibido en /api/contact");
+    console.log("Método:", request.method);
     try {
         const { name, email, message } = await request.json();
+        console.log("📨 Datos del formulario:", { name, email, message });
 
         if (!name || !email || !message) {
             return Response.json(

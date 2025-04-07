@@ -38,10 +38,10 @@ const FormContact = () => {
           message: formData.mensaje,
         }),
       });
-
-      let data;
-
+     
       const text = await response.text();
+      
+      let data;
       console.log("💬 Texto recibido del servidor:", text); // 👈 pon esto justo antes del try
       try {
         data = JSON.parse(text);
