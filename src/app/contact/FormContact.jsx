@@ -40,10 +40,12 @@ const FormContact = () => {
       });
 
       let data;
+      const text = await response.text();
+
       try {
-        data = await response.json();
+        data = JSON.parse(text);
       } catch (err) {
-        const text = await response.text();
+        
         console.error("Respuesta inesperada:", text);
         throw new Error("No se pudo procesar la respuesta del servidor.");
       }
