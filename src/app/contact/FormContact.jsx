@@ -4,15 +4,16 @@ import { Button } from "@nextui-org/react";
 import { Input, Textarea } from "@heroui/react";
 
 
-
-const FormContact = () => {
-
 // Estado para los datos del formulario
+const FormContact = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
     mensaje: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controlar el envío
+  const [errorMessage, setErrorMessage] = useState(""); // Estado para los mensajes de error
 
   // Manejar cambios en los inputs
   const handleChange = (e) => {
@@ -25,12 +26,14 @@ const FormContact = () => {
 
      // Validación de campos
   if (!formData.nombre || !formData.email || !formData.mensaje) {
-    alert("Por favor, completa todos los campos.");
+    setErrorMessage("Por favor, completa todos los campos.");
     return;
   }
 
+  setIsSubmitting(true); // Desactivar el botón de envío
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch('/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -40,26 +43,30 @@ const FormContact = () => {
         }),
       });
 
+      let data;
+      try {
+        data = await response.json(); // Intenta convertir la respuesta a JSON
+      } catch (err) {
+        const text = await response.text(); // Si no es JSON, muestra lo que sea
+        console.error("Respuesta inesperada:", text);
+        throw new Error("No se pudo procesar la respuesta del servidor.");
+      }    
+
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || "Error desconocido");
+        throw new Error(data?.error || "Error desconocido en el servidor.");
       }
+     
+      alert("Correo enviado correctamente");
+      setFormData({ nombre: "", email: "", mensaje: "" }); // Limpiar formulario
+      setErrorMessage(""); // Limpiar mensaje de error
 
-      const result = await response.json();
-      console.log(result);
-    //  const data = await response.json();
-
-  
-  alert("Correo enviado correctamente");
-    // Opcional: limpiar formulario después del envío exitoso
-    /*setFormData({ nombre: "", email: "", mensaje: "" });*/
-
-} catch (error) {
-  console.error("Error:", error);
-  alert(error.message);
-}
+  } catch (error) {
+    console.error("Error:", error);
+    setErrorMessage(error.message); // Mostrar mensaje de error
+  } finally {
+    setIsSubmitting(false); // Habilitar el botón de envío
+  }
 };
-
  
 
   return (
@@ -69,6 +76,10 @@ const FormContact = () => {
       <form className='flex flex-col justify-center items-center rounded-xl gap-5 py-10 '
             onSubmit={handleSubmit}>
         <h1 className="text-base break-words text-center justify-center py-6 text-zinc-200">Si quieres consultar sobre algo en particular, envíame un mensaje.</h1>
+        {errorMessage && (
+          <div className="text-red-500 text-sm">{errorMessage}</div> // Mostrar mensaje de error
+        )}
+        
         <Input
           type="text"
           label="Nombre"
@@ -106,7 +117,11 @@ const FormContact = () => {
         <Button className="text-zinc-300 mt-5 py-6 px-8 text-base" 
                 color="primary" 
                 variant="bordered" 
-                type="submit">Enviar</Button>
+                type="submit"
+                disabled={isSubmitting} // Desactivar el botón durante el envío
+                >
+                  {isSubmitting ? "Enviando..." : "Enviar"} {/* Cambiar texto del botón */}
+                </Button>
       </form>
     </div>
   )
