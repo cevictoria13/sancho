@@ -17,29 +17,25 @@ export async function POST(request) {
             port: parseInt(process.env.SMTP_PORT) || 465,
             secure: true,
             auth: {
-                user: "escritor@sanchorecabarren.cl",
-                pass: "6LAQYiL0cfAL",
+                user: process.env.EMAIL_USER, // Usa variables de entorno
+                pass: process.env.EMAIL_PASS, // Usa variables de entorno
             },
             debug: true, // Activa el modo de depuración
             logger: true, // Registra los eventos en la consola
         });
     
-
-        // Verificar conexión con el servidor SMTP de manera asincrónica
-       /* try {
-            await transporter.verify();
-            console.log("✅ El servidor SMTP está listo para enviar correos.");
-        } catch (error) {
-            console.error("❌ Error en SMTP:", error);
-            return new Response(JSON.stringify({ error: "Error en la conexión SMTP." }), {
-                status: 500,
-                headers: { "Content-Type": "application/json" },
-            });
-        }*/
+        transporter.verify((error, success) => {
+            if (error) {
+              console.log("Error de conexión SMTP:", error);
+            } else {
+              console.log("¡Conexión SMTP correcta!");
+              console.log("Resultado de success:", success);
+            }
+          });
+      
 
         const mailOptions = {
-            from: `"${name}" <${process.env.EMAIL_USER}>`,  // Usa el mismo email configurado en SMTP,
-           
+            from: `"${name}" <${process.env.EMAIL_USER}>`, // Usa el email configurado en SMTP           
             to: process.env.EMAIL_USER,
             subject: "Nuevo mensaje desde el formulario de contacto",
             text: `
@@ -61,7 +57,7 @@ Mensaje: ${message}
 
     } catch (error) {
         console.error("Error al enviar el correo:", error);
-        return new Response(JSON.stringify({  success: false, error: error.message  }), {
+        return new Response(JSON.stringify({ success: false, error: error.message }), {
             status: 500,
             headers: { "Content-Type": "application/json" },
         });
