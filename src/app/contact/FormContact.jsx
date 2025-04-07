@@ -40,14 +40,16 @@ const FormContact = () => {
         }),
       });
 
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Error desconocido");
+      }
+
       const result = await response.json();
       console.log(result);
     //  const data = await response.json();
 
-    if (!response.ok) {
-      throw new Error(result.error || "Error al enviar el correo");
-  }
-
+  
   alert("Correo enviado correctamente");
     // Opcional: limpiar formulario después del envío exitoso
     /*setFormData({ nombre: "", email: "", mensaje: "" });*/
