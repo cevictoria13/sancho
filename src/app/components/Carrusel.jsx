@@ -55,7 +55,7 @@ const PrevArrow = ({ onClick }) => (
       
 
       {isPopoverOpen && (
-      <PopoverContent className="w-[300px] h-auto py-4 bg-teal-600 rounded-lg">
+      <PopoverContent className="w-[500px] h-auto py-4 bg-teal-600 rounded-lg">
         <div className="flex flex-col items-center">
         <img
         src="/Lanzamiento_final.png"
