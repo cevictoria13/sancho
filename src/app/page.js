@@ -15,6 +15,7 @@ function Home() {
     <Doctor />
     <Andino />
     <Loco />
+    
   </section>
   );
 }

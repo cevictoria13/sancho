@@ -40,7 +40,7 @@ const NuevoAppbar = () => {
     { name: "Loco", path: "/loco/sancho-loco" },
     { name: "Libros", path: "/libros" },
     /*{ name: "Novedades", path: "/novedades" },*/
-    /*{ name: "Blog", path: "/blog" },*/
+    { name: "Blog", path: "/blog" },
     
   ];
 
