@@ -40,10 +40,9 @@ const Doctor = () => {
           <Link href="/doctor/sancho-doctor">  
             <p className="gap-6 text-amber-400 cursor-pointer hover text-xl sm:text-2xl md:text-4xl font-medium px-4 sm:px-10 text-center"
                style={{ fontFamily: "Averia Sans Libre" }}>
-              Sancho divulga saberes con la erudición que le da su doctorado en ciencias y 
-              su experiencia generando conocimientos en las áreas que se ha desempeñado como 
-              académico universitario, incluyendo proyectos de literatura, psicología y 
-              estudios de patrimonio cultural.
+             El conocimiento en ciencias naturales, y otras preocupaciones, 
+             las divulga experimentalmente; hasta ahora en narrativa y en verso. 
+             Busca cubrir espacios entre disciplinas, al menos entre ciencias naturales y literatura.
             </p>
             </Link> 
             

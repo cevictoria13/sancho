@@ -78,10 +78,10 @@ const Poeta = () => {
           <p className="mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl item-center text-center text-sky-200 mb-10"
              style={{ fontFamily: "Averia Sans Libre" }}>
             Sancho comenzó publicando poemas contingentes durante el primer año
-            de confinamiento. Antes de eso, reescribió en verso "Histoire d'un
+            de confinamiento. Mas antes, comenzó una re-escritura en verso de "Histoire d'un
             montagne", proyecto que terminó en un poema para un diaporama de
             diversidad geológica de San José de Maipo, presentado durante el
-            confinamiento. Así surgieron los textos de sus primeros libros.
+            confinamiento. Así comenzaron los versos de sus primeros libros.
           </p>
       </div>
           

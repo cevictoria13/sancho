@@ -47,10 +47,9 @@ const Andino = () => {
 
             <p className="mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-emerald-200 mb-10 "
                style={{ fontFamily: "Averia Sans Libre" }} >
-            La naturaleza andina Sancho la ha escrito principalmente 
-            como poemas y crónicas; hasta ahora, solamente un cuento suyo
-            habla de la cordillera. No obstante, lo andino abarca dos 
-            de sus tres primeros libros publicados.
+               La naturaleza andina Sancho la ha cultivado en poemas y crónicas, principalmente;
+               solamente un cuento suyo habla de la cordillera, hasta ahora; no obstante, 
+               lo andino abarca dos de sus tres primeros libros publicados.
             </p>
       </div>
       

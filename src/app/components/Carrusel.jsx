@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
-import {Popover, PopoverContent, Button} from "@heroui/react";
+//import {Popover, PopoverContent, Button} from "@heroui/react";
 
 
 const PrevArrow = ({ onClick }) => (
@@ -51,7 +51,7 @@ const PrevArrow = ({ onClick }) => (
 
     return (
       <div className=" mt-20 w-full max-w-full ">   
-      <Popover className="  fixed inset-10 top-8  justify-center items-center transform -translate-x-1/2 z-50">
+      {/*<Popover className="  fixed inset-10 top-8  justify-center items-center transform -translate-x-1/2 z-50">
       
 
       {isPopoverOpen && (
@@ -72,7 +72,7 @@ const PrevArrow = ({ onClick }) => (
         </div>
       </PopoverContent>
       )}
-    </Popover>
+    </Popover>*/}
 
 
     

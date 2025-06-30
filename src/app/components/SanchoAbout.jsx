@@ -41,9 +41,7 @@ const SanchoAbout = () => {
           Copiapó, y que se radicó en Santiago de Chile para estudiar. Sancho escribe
           literatura como una necesidad, modo de expresión artística con la pluma 
           como cincel para descubrir obras que cruzan géneros: poesía, narrativa de
-          ficción o crónicas, divulgación de conocimientos, incluso fotografía.
-          Sancho, aterrizado personaje de Cervantes.
-          Recabarren, apellido del tipógrafo poseedor del don de la palabra, tanto escrita como oral."
+          ficción o crónicas, divulgación de conocimientos, incluso fotografía."
         />
 
           

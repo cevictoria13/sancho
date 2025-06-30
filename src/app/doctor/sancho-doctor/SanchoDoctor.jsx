@@ -46,12 +46,10 @@ const SanchoDoctor = () => {
        
           <p className="mt-8 text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-amber-200 mb-10"
             style={{ fontFamily: "Averia Sans Libre" }}  >
-            Aunque su grado académico es doctor en ciencias con mención en 
-            geología, que es una ciencia natural, sus estudios se salen de 
-            la disciplina. Está convencido de que la especialización de los 
-            diversos conocimientos ha generado vacíos entre las distintas 
-            disciplinas que lloran ser llenados, y Sancho está dispuesto a 
-            cubrir espacios entre ciencias naturales y literatura, al menos.
+            Su grado académico de doctor en ciencias, trabajos interdisciplinarios, 
+            junto a su cultivo de literatura, lo hacen generar obras de divulgación, 
+            con amplias miradas a lo que se divulga: ciencias naturales, patrimonio cultural,
+            reflexiones sobre el territorio.
           </p>
           {/*<blockquote className=" mt-8 mb-10 text-3xl italic text-amber-200"
                       style={{ fontFamily: "Averia Sans Libre" }} >
