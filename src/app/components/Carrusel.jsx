@@ -92,12 +92,7 @@ const PrevArrow = ({ onClick }) => (
       </Link>
         </div>
 
-        <div className="w-full flex justify-center items-center" >
-        <img 
-        src= "/slider-banner-historia.png" 
-        alt="Image 1" 
-        className="w-full h-full max-h-[600px] object-contain"/>
-        </div>
+        
         <div className="w-full flex justify-center items-center">
         <img 
         src="/slider-banner-todavia.png" 
