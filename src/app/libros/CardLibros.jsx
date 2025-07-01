@@ -50,7 +50,9 @@ const CardLibros = (props) => {
             <div className='text-center  rounded mt-4 shadow-md top-0 z-20 p-5'
                  style={{ fontFamily: "Averia Sans Libre" }}>
                 <h1 className='font-bold text-lg text-slate-300'>{props.title}</h1>
+                <p className="text-sm mt-2 text-slate-300">{props.edit}</p>
                 <p  className="text-sm mt-2 text-slate-300">{props.subtitle}</p>
+
             </div>
           {/*opcional color contenedor texto> bg-gray-500/70*/}
 

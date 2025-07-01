@@ -24,7 +24,7 @@ const noto_sans = Noto_Sans({
 
 export const metadata = {
   title: "Sancho Recabarren | Escritor",
-  description: "Generado por Cecilia Sánchez",
+  description: "Desarrollado por Cecilia Sánchez",
 };
 
 export default function RootLayout({ children }) {

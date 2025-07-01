@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
 //import {Popover, PopoverContent, Button} from "@heroui/react";
-
+import Link from 'next/link';
+//import iframe from 'react-iframe';
 
 const PrevArrow = ({ onClick }) => (
     <button 
@@ -77,6 +78,20 @@ const PrevArrow = ({ onClick }) => (
 
     
       <Slider {...settings}>
+        <div className="w-full flex justify-center items-center" >
+       <Link
+        href="https://youtu.be/ywiXaXRBNMQ?t=1210"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/baner-historia-de-una-montana.png"
+          alt="Imagen 1 (Haz clic para ver el video)"
+          className="w-full h-full max-h-[600px] object-contain cursor-pointer"
+        />
+      </Link>
+        </div>
+
         <div className="w-full flex justify-center items-center" >
         <img 
         src= "/slider-banner-historia.png" 
