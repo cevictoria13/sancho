@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
-//import {Popover, PopoverContent, Button} from "@heroui/react";
+import {Popover, PopoverContent, Button} from "@heroui/react";
 import Link from 'next/link';
 //import iframe from 'react-iframe';
 
@@ -52,19 +52,19 @@ const PrevArrow = ({ onClick }) => (
 
     return (
       <div className=" mt-20 w-full max-w-full ">   
-      {/*<Popover className="  fixed inset-10 top-8  justify-center items-center transform -translate-x-1/2 z-50">
+      <Popover className="  fixed inset-10 top-8  justify-center items-center transform -translate-x-1/2 z-50">
       
 
       {isPopoverOpen && (
       <PopoverContent className="w-[500px] h-auto py-4 bg-teal-600 rounded-lg">
         <div className="flex flex-col items-center">
         <img
-        src="/Lanzamiento_final.png"
+        src="/presentacion-kimun.png"
         alt="Popover Image"
         className=" max-h-[100vh] sm:max-h-[80vh] md:max-h-[70vh] lg:max-h-[60vh] object-cover rounded-lg py-1 " //max-h-[300px] regula el ancho del afiche
         onError={() => console.error("No se pudo cargar la imagen")}
       />
-          <div className="text-2xl font-bold mt-4">¡¡28 de mayo!!</div>
+          <div className="text-2xl font-bold mt-4">¡¡26 de julio!!</div>
           <div className="text-tiny"></div>
           <button
                 className="mt-4 px-6 py-1 bg-teal-300 text-teal-800 font-bold rounded-lg"
@@ -73,7 +73,7 @@ const PrevArrow = ({ onClick }) => (
         </div>
       </PopoverContent>
       )}
-    </Popover>*/}
+    </Popover>
 
 
     
