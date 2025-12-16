@@ -59,13 +59,13 @@ const PrevArrow = ({ onClick }) => (
       <PopoverContent className="w-[500px] h-auto py-4 bg-teal-600 rounded-lg">
         <div className="flex flex-col items-center">
         <img
-        src="/presentacion-kimun.png"
+        src="/grafica-2025.webp"
         alt="Popover Image"
         className=" max-h-[100vh] sm:max-h-[80vh] md:max-h-[70vh] lg:max-h-[60vh] object-cover rounded-lg py-1 " //max-h-[300px] regula el ancho del afiche
         onError={() => console.error("No se pudo cargar la imagen")}
       />
-          <div className="text-2xl font-bold mt-4 text-center">Presentación del libro en el Cajón del Maipo 
-                                                  ¡¡26 de julio!!</div>
+          <div className="text-2xl font-bold mt-4 text-center">Estaré en Nadar Ediciones - Stand 107!!
+                                                  ¡¡18 - 21 diciembre!!</div>
           <div className="text-tiny"></div>
           <button
                 className="mt-4 px-6 py-1 bg-teal-300 text-teal-800 font-bold rounded-lg"
