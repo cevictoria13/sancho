@@ -64,7 +64,7 @@ const PrevArrow = ({ onClick }) => (
         className=" max-h-[100vh] sm:max-h-[80vh] md:max-h-[70vh] lg:max-h-[60vh] object-cover rounded-lg py-1 " //max-h-[300px] regula el ancho del afiche
         onError={() => console.error("No se pudo cargar la imagen")}
       />
-          <div className="text-2xl font-bold mt-4 text-center">Estaremos en el Stand 107 de Nadar Ediciones. <br/>
+          <div className="text-2xl font-bold mt-4 text-center">Estaremos en el Stand 107 <br/> de Nadar Ediciones. <br/>
                                                   ¡¡18 - 21 diciembre, Te esperamos!!</div>
           <div className="text-tiny"></div>
           <button
