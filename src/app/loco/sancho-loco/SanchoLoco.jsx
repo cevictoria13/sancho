@@ -32,6 +32,12 @@ const Loco = () => {
         publisher: "Próximamente!!",
         link: "",
       },
+       {
+        title: "Un motociclista en el desierto",
+        type:"Cuento corto",
+        publisher: "Publicado en Revista Mal de Ojo, septiembre 2025",
+        link: "https://revistamaldeojo.cl/index.php/2024/08/09/nanohistoria-del-fin-por-sancho-recabarren/",
+      },
     ];
 
     return (

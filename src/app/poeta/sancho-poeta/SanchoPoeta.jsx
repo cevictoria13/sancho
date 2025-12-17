@@ -64,6 +64,13 @@ const Poeta = () => {
       publisher: "Publicado en Letras de Chile, 2023",
       link: "https://letrasdechile.cl/2023/10/13/nuevos-poemas-de-sancho-recabarren/",
     },
+    {
+      title: "Julia Chuñil: Ejemplo Azul",
+      type: "Poema",
+      publisher: "Publicado en 'Chuñil', libro de varios autores, Marciano Ediciones, 2025, p.41",
+      link: "https://marcianoediciones.cl/wp-content/uploads/2025/10/Chunil_libro_virtual_op.pdf",
+    },
+
   ];
 
   return (
