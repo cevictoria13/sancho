@@ -18,7 +18,7 @@ const Loco = () => {
         title: "Nanohistoria del fin",
         type:"Historia con capítulos de máximo siete palabras cada uno",
         publisher: "Publicado en Revista Mal de Ojo, 2024",
-        link: "https://revistamaldeojo.cl/index.php/2024/08/09/nanohistoria-del-fin-por-sancho-recabarren/",
+        link: "https://https://revistamaldeojo.cl/nanohistoria-del-fin-por-sancho-recabarren/",
       },
       {
         title: "Atrapado en el cerro Bello",
@@ -36,7 +36,7 @@ const Loco = () => {
         title: "Un motociclista en el desierto",
         type:"Cuento corto",
         publisher: "Publicado en Revista Mal de Ojo, septiembre 2025",
-        link: "https://revistamaldeojo.cl/index.php/2024/08/09/nanohistoria-del-fin-por-sancho-recabarren/",
+        link: "https://revistamaldeojo.cl/nanohistoria-del-fin-por-sancho-recabarren/",
       },
     ];
 
