@@ -10,22 +10,28 @@ import Link from 'next/link';
 
 const PrevArrow = ({ onClick }) => (
     <button 
+      type="button"
       onClick={onClick} 
+      aria-label="Ir a la diapositiva anterior"
       className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-teal-600 text-white p-2 rounded-full hover:bg-gray-600"
       style={{ left: "10px" }} // Ajustar la posición
     >
-      <ChevronLeft size={24} color="white"  />
+      <ChevronLeft size={24} color="white" aria-hidden="true" />
+      <span className="sr-only">Anterior</span>
     </button>
   );
   
   // Componente para la flecha derecha
   const NextArrow = ({ onClick }) => (
     <button 
+      type="button"
       onClick={onClick} 
+      aria-label="Ir a la siguiente diapositiva"
       className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-teal-600 text-white p-2 rounded-full hover:bg-gray-600"
       style={{ right: "10px" }} // Ajustar la posición
     >
-      <ChevronRight size={24} color="white" />
+      <ChevronRight size={24} color="white" aria-hidden="true"/>
+      <span className="sr-only">Siguiente</span>
     </button>
   );
 
