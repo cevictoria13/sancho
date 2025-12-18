@@ -36,7 +36,7 @@ const Loco = () => {
         title: "Un motociclista en el desierto",
         type:"Cuento corto",
         publisher: "Publicado en Revista Mal de Ojo, septiembre 2025",
-        link: "https://revistamaldeojo.cl/nanohistoria-del-fin-por-sancho-recabarren/",
+        link: "https://revistamaldeojo.cl/un-motociclista-en-el-desierto-de-sancho-recabarren/",
       },
     ];
 
